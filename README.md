@@ -10,11 +10,13 @@ Since `ENTRYPOINT` is set to `kubectl` you just need to run the container, howev
 
 Because of this it's recommended that you simply crete an alias to the above:
 
-    alias kubectl='docker run --net=host returnpath/kubectl'
+    alias kubectl='docker run --rm --net=host returnpath/kubectl'
 
 This allows you to use `kubectl` as if it were installed locally, so to list running pods it's simply:
 
     kubectl get pods
+
+Note the `--rm` in the alias: This removes the container after the command exits and prevents old containers from collecting each time you run `kubectl`.
 
 The commands above will use the latest version of `kubectl` that's been pushed up, but you can specify which version by tage. To run `kubectl` version `1.2.3` it's:
 
