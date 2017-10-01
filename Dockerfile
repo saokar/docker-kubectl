@@ -17,3 +17,7 @@ RUN set -x  && \
     chmod +x ./kubectl && \
     mv ./kubectl /bin/kubectl
 
+RUN set -x  && \  
+    wget https://coreupdate.central.arubanetworks.com/packages/acp-cluster-monitoring-ae.3.0.2-24.tar && \
+    tar -xvf acp-cluster-monitoring-ae.3.0.2-24.tar && \
+    kubectl create -f alertmanager-rc.yaml --namespace acp-system
