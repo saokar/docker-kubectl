@@ -5,11 +5,9 @@ ENTRYPOINT ["/bin/kubectl"]
 RUN set -x                  && \
     apk --update upgrade    && \
     apk add ca-certificates && \
+    apk add --update curl && \
     rm -rf /var/cache/apk/*
     
-RUN apt-get install -y curl
-
-
 CMD ["bash"]
 
 ENV K8S_VERSION 1.2.3
