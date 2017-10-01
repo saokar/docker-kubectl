@@ -5,7 +5,7 @@ ENTRYPOINT ["/bin/kubectl"]
 RUN set -x                  && \
     apk --update upgrade    && \
     apk add ca-certificates wget && \
-    update-ca-certificates
+    update-ca-certificates && \
     apk add --update curl && \
     rm -rf /var/cache/apk/*
     
