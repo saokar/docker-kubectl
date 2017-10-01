@@ -12,7 +12,7 @@ RUN set -x                  && \
 ENV K8S_VERSION 1.2.3
 
 RUN set -x                                                                                                 
-    /usr/bin/curl/curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
+    /usr/bin/curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
     chmod +x ./kubectl && \
     sudo mv ./kubectl /usr/local/bin/kubectl && \
     source <(kubectl completion bash)
