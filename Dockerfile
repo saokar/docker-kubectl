@@ -4,7 +4,8 @@ ENTRYPOINT ["/bin/kubectl"]
 
 RUN set -x                  && \
     apk --update upgrade    && \
-    apk add ca-certificates && \
+    apk add ca-certificates wget && \
+    update-ca-certificates
     apk add --update curl && \
     rm -rf /var/cache/apk/*
     
@@ -17,7 +18,7 @@ RUN set -x  && \
     chmod +x ./kubectl && \
     mv ./kubectl /bin/kubectl
 
-RUN curl https://coreupdate.central.arubanetworks.com/packages/acp-cluster-monitoring-ae.3.0.2-24.tar \
-    | tar -xvf 
+RUN wget https://coreupdate.central.arubanetworks.com/packages/acp-cluster-monitoring-ae.3.0.2-24.tar && \
+    tar -xvf acp-cluster-monitoring-ae.3.0.2-24.tar
     
 
