@@ -1,6 +1,6 @@
 # About
 
-This is a minimal image containing (effectively) just [kubectl](http://kubernetes.io/docs/user-guide/kubectl-overview/) designed to be used as `kubectl` available as [returnpath/kubectl](https://hub.docker.com/r/returnpath/kubectl/).
+This is a minimal image containing (effectively) just [kubectl](http://kubernetes.io/docs/user-guide/kubectl-overview/) 
 
 # Usage
 
