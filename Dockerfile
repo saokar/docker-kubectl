@@ -18,8 +18,6 @@ RUN set -x  && \
     chmod +x ./kubectl && \
     mv ./kubectl /bin/kubectl
 
-RUN cd /tmp && \
-    wget https://coreupdate.central.arubanetworks.com/packages/acp-cluster-monitoring-ae.3.0.2-24.tar && \
-    tar -xvf acp-cluster-monitoring-ae.3.0.2-24.tar
+
     
 
